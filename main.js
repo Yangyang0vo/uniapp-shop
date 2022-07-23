@@ -9,7 +9,8 @@ import {
 //挂载到顶级对象  
 uni.$http = $http
 // 请求根路径
-$http.baseUrl = 'https://www.uinav.com'
+$http.baseUrl = 'http://www.uinav.com'
+// $http.baseUrl = 'https://www.uinav.com'
 // 请求拦截器
 $http.beforeRequest = function(options) {
   uni.showLoading({
