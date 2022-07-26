@@ -2,6 +2,7 @@
 import Vue from 'vue'
 import App from './App'
 
+import store from './store/store.js'
 // 导入网络请求包
 import {
   $http
@@ -9,8 +10,8 @@ import {
 //挂载到顶级对象  
 uni.$http = $http
 // 请求根路径
-$http.baseUrl = 'http://www.uinav.com'
-// $http.baseUrl = 'https://www.uinav.com'
+// $http.baseUrl = 'http://www.uinav.com'
+$http.baseUrl = 'https://www.uinav.com'
 // 请求拦截器
 $http.beforeRequest = function(options) {
   uni.showLoading({
@@ -35,7 +36,9 @@ Vue.config.productionTip = false
 App.mpType = 'app'
 
 const app = new Vue({
-  ...App
+  ...App,
+  // 2. 将 store 挂载到 Vue 实例上
+  store
 })
 app.$mount()
 // #endif

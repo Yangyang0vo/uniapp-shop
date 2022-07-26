@@ -45,6 +45,7 @@
 </template>
 
 <script>
+  import badgeMix from '@/mixins/tabbar-badge.js'
   export default {
     data() {
       return {
@@ -56,6 +57,7 @@
         floorList: [],
       };
     },
+    mixins: [badgeMix],
     onLoad() {
       //调用方法，获取轮播图数据
       this.getSwiperList()
